@@ -4,7 +4,7 @@ on:
     paths: 
       - '!README.md'
       - '**.js'
-    branches: [main]
+    branches: [main, test]
   pull_request:
     type: [opened, reopened, synchronize]
     paths: 
