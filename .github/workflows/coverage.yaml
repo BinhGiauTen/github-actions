@@ -1,0 +1,27 @@
+name: hello world
+on:
+  push: 
+    paths: 
+      - '!README.md'
+      - '**.js'
+    branches: [main]
+  pull_request:
+    type: [opened, reopened, synchronize]
+    paths: 
+      - '!README.md'
+      - '**.js'
+    branches: 
+      - 'main'
+  workflow_dispatch:
+
+jobs: 
+  Coverage-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.SECRET_TOKEN }}
+          threshold: 80
+          # skip-step: install
