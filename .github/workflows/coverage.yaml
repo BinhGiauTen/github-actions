@@ -20,14 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm install
-      # - name: Install Jest globally
-      #   run: npm install -g jest
-      # - name: Check Jest path
-      #   run: which jest
-      # - name: Check Jest permissions
-      #   run: ls -l $(which jest)
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          github-token: ${{ secrets.SECRET_TOKEN }}
-          threshold: 80
-          skip-step: install
+      - name: Install Jest globally
+        run: npm install -g jest
+      - name: Check Jest path
+        run: which jest
+      - name: Check Jest permissions
+        run: ls -l $(which jest)
+      # - uses: ArtiomTr/jest-coverage-report-action@v2
+      #   with:
+      #     github-token: ${{ secrets.SECRET_TOKEN }}
+      #     threshold: 80
+      #     skip-step: install
