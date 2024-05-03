@@ -23,7 +23,9 @@ jobs:
       - name: Set Permissions for NPX and Jest
         run: |
           which npx
+          echo $(which npx)
           which jest
+          echo $(which jest)
           ls -l $(which npx)
           ls -l $(npm bin)/jest
           sudo chmod +x $(which npx)
