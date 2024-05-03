@@ -4,7 +4,7 @@ on:
     paths: 
       - '!README.md'
       - '**.js'
-    branches: [main]
+    branches: [main, test]
   pull_request:
     type: [opened, reopened, synchronize]
     paths: 
@@ -15,15 +15,14 @@ on:
   workflow_dispatch:
 
 jobs: 
-  steps:
-    - run: echo Coverage
-  # Coverage-report:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - run: npm install
-  #     - uses: ArtiomTr/jest-coverage-report-action@v2
-  #       with:
-  #         github-token: ${{ secrets.SECRET_TOKEN }}
-  #         threshold: 80
+  Coverage-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: echo Coverage
+      # - uses: ArtiomTr/jest-coverage-report-action@v2
+      #   with:
+      #     github-token: ${{ secrets.SECRET_TOKEN }}
+      #     threshold: 80
           # skip-step: install
