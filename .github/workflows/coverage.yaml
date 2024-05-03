@@ -22,6 +22,8 @@ jobs:
       - run: npm install
       - name: Set Permissions for NPX and Jest
         run: |
+          ls -l $(which npx)
+          ls -l $(npm bin)/jest
           sudo chmod +x $(which npx)
           sudo chmod +x $(npm bin)/jest
       - uses: ArtiomTr/jest-coverage-report-action@v2
