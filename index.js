@@ -3,6 +3,7 @@ const {add,minus} = require('./functions')
 
 console.log('Hello world again');
 console.log('Today is a beautiful day')
+console.log('Test')
 var a = 2
 var b = 9
 console.log(util.format("Add: %d+%d=%d", a, b, add(a,b)))
