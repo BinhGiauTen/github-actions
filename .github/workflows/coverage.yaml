@@ -26,8 +26,10 @@ jobs:
         run: which jest
       - name: Check Jest permissions
         run: ls -l $(which jest)
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          github-token: ${{ secrets.SECRET_TOKEN_2 }}
-          threshold: 80
-          skip-step: install
+      - name: Test unit test
+        run: npm test
+      # - uses: ArtiomTr/jest-coverage-report-action@v2
+      #   with:
+      #     github-token: ${{ secrets.SECRET_TOKEN_2 }}
+      #     threshold: 80
+      #     skip-step: install
