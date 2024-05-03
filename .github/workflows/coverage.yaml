@@ -20,15 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm install
-      - name: Set Permissions for NPX and Jest
-        run: |
-          which npx
-          which jest
-          ls -l $(which npx)
-          ls -l $(npm bin)/jest
-          sudo chmod +x $(which npx)
-          sudo chmod +x $(npm bin)/jest
-        shell: bash
+      - name: Verify Jest Installation (optional)
+        run: npm exec jest --version  # Check Jest availability
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.SECRET_TOKEN }}
