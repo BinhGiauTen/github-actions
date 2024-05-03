@@ -21,6 +21,14 @@ jobs:
       - uses: actions/checkout@v3
       - run: npm install
       - run: echo Coverage
+      - name: Set Permissions for NPX and Jest
+        run: |
+          which npx
+          which jest
+          ls -l $(which npx)
+          ls -l $(npm bin)/jest
+          sudo chmod +x $(which npx)
+          sudo chmod +x $(npm bin)/jest
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           github-token: ${{ secrets.SECRET_TOKEN }}
