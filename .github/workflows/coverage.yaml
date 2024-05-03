@@ -26,7 +26,7 @@ jobs:
           which jest
           ls -l $(which npx)
           ls -l $(npm bin)/jest
-          sudo chmod +x $(which npx)
+          sudo chmod +x /usr/local/bin/npx
           sudo chmod +x /usr/local/bin/npx
       - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
         with:
